@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chenkaiyun.ssm.mapper.MusicMapper" >
+	<select id="getMusicList"  resultType="pd">
+		select 
+			music_id,
+			user_name,
+			music_name,
+			music_url,
+			music_background_url,
+			description_html,
+			create_datetime,
+			modify_datetime 
+		from 
+			music_info
+	</select>
+ 
+</mapper>

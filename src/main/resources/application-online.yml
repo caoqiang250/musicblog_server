@@ -1,0 +1,73 @@
+#服务器配置
+server:
+  port: 8082
+  servlet:
+    context-path: 
+
+
+spring:
+  #数据库配置  
+  datasource:
+    name: cocoserver_online
+    url: jdbc:mysql:///cocoserver_online?useUnicode=yes&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
+    username: 
+    password: 
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    
+  #thymeleaf 配置
+  thymeleaf:
+    cache: true
+    
+  #邮箱配置  
+  mail:
+    host: smtp.exmail.qq.com
+    protocol: smtp
+    username: cocobit@fengke.club
+    password: bGKN7cB5rk5oZY8p
+    port: 465
+    default-encoding: UTF-8
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.timeout: 25000
+      mail.debug: true
+      mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
+
+#mybaties配置    
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:MybatisConfig.xml
+ 
+  
+#分页插件配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+   
+#beecloud配置
+beecloud: 
+  appId: 272ca628-3097-45bf-9405-fc26abb48dfb
+  appSecret: 904178aa-cd85-4c01-a18f-5bc53313aa4d
+  masterSecret: 550e5a1b-7853-4cb4-a091-cffba1d805e9
+
+    
+#微信公众号配置
+wx: 
+  appId: wx51c56724cecf2d90
+  appSecret: a0ae63dfa899b1bd2ef19d614484f61f
