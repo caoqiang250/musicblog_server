@@ -30,7 +30,7 @@ dependencies {
 
 task runOnline(type: BootRun)  {
     classpath = sourceSets.main.runtimeClasspath
-    main= 'com.chenkaiyun.ssm.MusicBlogApplication'
+    main= 'com.chenkaiyun.ssm.MusicblogServerApplication'
     systemProperty 'spring.profiles.active', 'online'
  }
 
