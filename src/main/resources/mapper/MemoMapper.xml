@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chenkaiyun.ssm.mapper.MemoMapper" >
+	<!-- 获取某个月的备忘信息 -->
+	<select id="getMemoList" parameterType="pd" resultType="pd">
+	select 
+		memo_id,
+		memo_title as title,
+		memo_content as description,
+		period 
+	from 
+		memo_info 
+	where 
+		year(period) = #{year} and month(period) = #{month}
+	order by period
+	</select>
+ 
+</mapper>

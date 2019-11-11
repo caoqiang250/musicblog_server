@@ -11,7 +11,7 @@ import com.chenkaiyun.ssm.common.util.PageData;
 import com.chenkaiyun.ssm.controller.base.BaseController;
 import com.chenkaiyun.ssm.service.MusicService;
 
-
+//音乐相关
 @RestController
 @RequestMapping("/api/music")
 public class MusicController extends BaseController {
@@ -21,7 +21,7 @@ public class MusicController extends BaseController {
 	
 	//获取音乐列表
 	@RequestMapping("/getMusicList")
-	List<PageData> getBulletinList(){
+	List<PageData> getMusicList(){
 		return musicService.getMusicList();
 	}
 
